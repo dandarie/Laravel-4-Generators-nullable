@@ -18,8 +18,8 @@ class CreateTable extends Table {
         // Let's add that for the user automatically
         array_unshift($fields, ['field' => 'id', 'type' => 'increments']);
 
-        // We'll also add timestamps to new tables for convenience
-        array_push($fields, ['field' => '', 'type' => 'timestamps']);
+        // We'll also add nullable timestamps to new tables for convenience
+        array_push($fields, ['field' => '', 'type' => 'nullableTimestamps']);
 
         return (new AddToTable($this->file, $this->compiler))->add($migrationData, $fields);
     }
